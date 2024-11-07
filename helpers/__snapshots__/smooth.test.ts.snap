@@ -1,0 +1,17 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`smmoth test suite > should smooth the array 1`] = `
+[
+  2.5,
+  3,
+  3.1666666666666665,
+  3.4285714285714284,
+  4.142857142857143,
+  4.857142857142857,
+  5.571428571428571,
+  6.285714285714286,
+  6.5,
+  7,
+  7.5,
+]
+`;
