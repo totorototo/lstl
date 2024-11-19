@@ -244,14 +244,11 @@ export async function getStaticProps() {
   const geoJson = await getGeoJson({ directory, filename: `${filename}.gpx` });
 
   if ("coordinates" in geoJson.features[0].geometry) {
-    const coordinates = geoJson.features[0].geometry.coordinates as [
+    const coordinates = geoJson.features[0].geometry.coordinates.flat() as [
       number,
       number,
       number,
     ][];
-
-    const reversed = [...coordinates].reverse();
-    const global: [number, number, number][] = [...reversed, ...coordinates];
 
     // 2- retrieve checkpoints from csv file
     const checkpoints = await getCheckpoints({
@@ -260,7 +257,7 @@ export async function getStaticProps() {
     });
 
     // trail race stats
-    const analyzer = createTrackAnalyzer(global);
+    const analyzer = createTrackAnalyzer(coordinates);
     const distance = analyzer.length;
     const elevation = analyzer.elevation;
     const region = analyzer.region;
@@ -293,7 +290,7 @@ export async function getStaticProps() {
     const sections: Section[] = computeSections({
       checkpoints: updatedCheckpoints,
       analyzer,
-      coordinates: global,
+      coordinates,
     });
 
     // compute timed sections
@@ -303,7 +300,7 @@ export async function getStaticProps() {
       checkpoints: timedCheckpoints,
       raceStartingDate,
       analyzer,
-      coordinates: global,
+      coordinates,
     });
 
     // compute stages
@@ -322,7 +319,7 @@ export async function getStaticProps() {
       checkpoints: ck,
       raceStartingDate,
       analyzer,
-      coordinates: global,
+      coordinates,
     });
 
     const extrema = climbpro(enhancedPositions);
@@ -374,7 +371,7 @@ export async function getStaticProps() {
     const race: TrailRace = {
       enhancedCheckpoints, // TODO: to be renamed -> enhanced checkpoints positions
       distance,
-      wayPoints: global,
+      wayPoints: coordinates,
       enhancedPositions,
       elevation: {
         gain: elevation.positive,
