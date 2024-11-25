@@ -1,13 +1,13 @@
 location,label,km,kind,cutoffTime
 Lyon,Départ,0.0,Départ,2024-11-30T08:00:00Z
-Soucieu en Jarest,CP1,21.00,refueling,2024-11-30T11:00:00Z
-Sainte Catherine,CP2,49.00,refueling,2024-11-30T16:00:00Z
-Saint Christo en Jarest,CP3,62.00,refueling,2024-11-30T18:15:00Z
+Soucieu en Jarest,CP1,20.00,refueling,2024-11-30T11:00:00Z
+Sainte Catherine,CP2,48.00,refueling,2024-11-30T16:00:00Z
+Saint Christo en Jarest,CP3,61.00,refueling,2024-11-30T18:15:00Z
 Saint Etienne,CP4,82.00,refueling,2024-11-30T21:30:00Z
 Saint Etienne,CP5,82.00,refueling,2024-11-30T22:30:00Z
-Saint Christo en Jarest,CP5,102.00,refueling,2024-12-01T03:30:00Z
+Saint Christo en Jarest,CP5,92.00,refueling,2024-12-01T03:30:00Z
 Sainte Catherine,CP6,115.00,refueling,2024-12-01T06:00:00Z
 Saint Genou,CP7,130.00,refueling,2024-12-01T09:00:00Z
 Soucieu en Jarrest,CP8,143.00,refueling,2024-12-01T11:30:00Z
-Chapenost,CP9,150.00,refueling,2024-12-01T13:00:00Z
+Chaponost,CP9,150.00,refueling,2024-12-01T13:00:00Z
 Lyon,Arrivée,164.00,Arrivée,2024-12-01T16:00:00Z
